@@ -29,6 +29,7 @@ export async function onRequest(context) {
   proxiedResponse.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
   proxiedResponse.headers.set('Access-Control-Allow-Headers', '*')
 
+
   // 处理预检请求（OPTIONS）
   if (context.request.method === 'OPTIONS') {
     return new Response(null, {
