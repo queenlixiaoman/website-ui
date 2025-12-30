@@ -5,7 +5,7 @@
 export async function getInstagramUser() {
   try {
     // 改为相对路径，通过 next.config.mjs 的 rewrite 代理到 localhost:3001，解决跨域问题
-    const url = '/instagram/info'
+    const url = '/api/instagram/info'
     const res = await fetch(url)
     const data = await res.json()
     console.log('[Instagram] User data:', data)
