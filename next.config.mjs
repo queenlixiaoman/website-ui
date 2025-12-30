@@ -40,6 +40,11 @@ const nextConfig = buildMode
           source: '/api/instagram/:path*',
           destination: 'https://my-app.lixiaoman941210.workers.dev/api/instagram/:path*',
         },
+        // Instagram 代理规则：优先匹配
+        {
+          source: '/api/email/:path*',
+          destination: 'http://localhost:3000/api/email/:path*',
+        },
         // 代理到外部API
         {
           source: '/api/:path*',

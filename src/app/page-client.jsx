@@ -6,12 +6,12 @@ import LayoutShell from '@c/LayoutShell'
 import HomeFloorPlans from '@c/HomeFloorPlans'
 import InstagramFeed from '@c/InstagramFeed'
 import StructuredData from '@c/StructuredData'
+import ContactForm from '../components/ContactForm'
 import { generateApartmentComplexSchema } from '@/lib/seo'
 import { headerColor, plans } from '@/config/home'
 import { header } from '@/config/common'
 
 import style from './page.module.css'
-
 export default function HomeClient() {
   // 获取构建信息 上线时候去掉
   useEffect(() => {
@@ -47,6 +47,7 @@ export default function HomeClient() {
         <main className = { style.mainContent }>
           <HomeFloorPlans />
           <InstagramFeed />
+          <ContactForm />
         </main>
       </LayoutShell>
     </main>
