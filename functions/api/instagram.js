@@ -2,19 +2,23 @@ export async function onRequest(context) {
   const request = context.request
   const url = new URL(request.url)
 
-  // 提取 /api/instagram 之后的相对路径（包括子路径）
-  let relativePath = url.pathname.replace(/^\/api\/instagram/, '') || ''
-  if (relativePath.startsWith('/')) relativePath = relativePath.slice(1)
+  // 提取 /api/instagram 之后的相对路径（支持空路径）
+  let relativePath = url.pathname.replace(/^\/api\/instagram\/?/, '')
 
-  // 后端基础 URL
+  // 后端目标基址
   const backendBase = 'https://my-app.lixiaoman941210.workers.dev/api/instagram'
 
-  // 构建目标 URL（保留查询参数）
   const backendUrl = new URL(backendBase)
-  if (relativePath) backendUrl.pathname += '/' + relativePath
-  backendUrl.search = url.search
+  if (relativePath) {
+    // 清理多余斜杠并拼接
+    backendUrl.pathname += '/' + relativePath.replace(/\/+$/, '')
+  }
+  backendUrl.search = url.search // 保留查询参数
 
-  // 转发请求
+  // 调试日志（强烈推荐，部署后看实时日志确认转发）
+  console.log('Frontend request:', url.pathname + url.search)
+  console.log('Proxying to:', backendUrl.toString())
+
   const response = await fetch(backendUrl.toString(), {
     method: request.method,
     headers: request.headers,
@@ -22,13 +26,12 @@ export async function onRequest(context) {
     redirect: 'follow',
   })
 
-  // 复制响应并添加 CORS
   const proxiedResponse = new Response(response.body, response)
   proxiedResponse.headers.set('Access-Control-Allow-Origin', '*')
-  proxiedResponse.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
+  proxiedResponse.headers.set('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS')
   proxiedResponse.headers.set('Access-Control-Allow-Headers', '*')
 
-  // 处理 OPTIONS 预检
+  // 处理预检请求
   if (request.method === 'OPTIONS') {
     return new Response(null, { status: 204, headers: proxiedResponse.headers })
   }
