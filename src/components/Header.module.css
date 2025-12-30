@@ -1,0 +1,166 @@
+.headerWrapper {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  background-color: var(--color-header-bg, rgba(255, 255, 255, 0.95));
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 0;
+  height: auto;
+  line-height: normal;
+}
+
+.headerWrapper.scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+}
+
+.headerContent {
+  max-width: 100%;
+  padding: 10px 40px;
+  margin: 0 auto;
+}
+
+/* Logo Section */
+.logoSection {
+  flex-shrink: 0;
+}
+
+.logoImg {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+.formerNameContainer {
+  margin-top: 5px;
+  line-height: 1.2;
+}
+
+.formerLabel {
+  font-size: 14px;
+  font-weight: 600;
+  font-style: italic;
+  color: #000;
+  display: block;
+}
+
+.formerNameValue {
+  font-size: 20px;
+  font-weight: 700;
+  color: #e31837; /* Red color matching the image */
+  display: block;
+  font-family: serif; /* Assuming a serif font for the brand name */
+}
+
+/* Navigation Section */
+.navSection {
+  flex: 1;
+  padding: 0 40px;
+}
+
+.navLink {
+  font-size: 16px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--color-header-text, #002b5c);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+  font-family: sans-serif;
+}
+
+.navLink:hover {
+  color: #e31837; /* Red hover effect */
+}
+
+/* Action Section */
+.actionSection {
+  flex-shrink: 0;
+}
+
+.portalButton {
+  background-color: #002b5c;
+  border-color: #002b5c;
+  color: #fff;
+  border-radius: 20px;
+  font-weight: 600;
+  height: 40px;
+  padding: 0 24px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.portalButton:hover {
+  background-color: #001a38;
+  border-color: #001a38;
+  opacity: 0.9;
+}
+
+.portalButtonMobile {
+  margin-bottom: 16px;
+  justify-content: center;
+}
+
+.phoneNumberMobile {
+  text-align: center;
+  font-size: 18px;
+}
+
+.drawerActionContainer {
+  margin-top: 20px;
+}
+
+.phoneNumber {
+  font-size: 20px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--color-header-text, #002b5c);
+  text-decoration: none;
+  margin-top: 8px;
+  display: block;
+}
+
+/* Mobile Drawer Styles */
+.mobileMenuButton {
+  font-size: 24px;
+  color: var(--color-header-text, #002b5c);
+}
+
+.drawerBody {
+  padding: 24px;
+}
+
+.drawer :global(.ant-drawer-body) {
+  padding: 0;
+}
+
+.mobileLink {
+  font-size: 18px;
+  font-weight: 700;
+  color: #002b5c;
+  padding: 12px 0;
+  display: block;
+  text-transform: uppercase;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+@media (max-width: 1200px) {
+  .headerContent {
+    padding: 10px 20px;
+  }
+  .navSection {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .logoImg {
+    height: 50px;
+  }
+}
+

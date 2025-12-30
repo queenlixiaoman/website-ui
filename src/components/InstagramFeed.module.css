@@ -1,0 +1,165 @@
+.container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.userAvatar {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.avatarOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.userAvatar:hover .avatarOverlay {
+  opacity: 1;
+}
+
+.avatar {
+  background-color: #f56a00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100% !important;
+  /* Ensure avatar fills the wrapper */
+  height: 100% !important;
+}
+
+.userName {
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+}
+
+.instagramLabel {
+  color: #888;
+  font-size: 12px;
+}
+
+.grid {
+  margin-bottom: 30px;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  /* 1:1 Aspect Ratio */
+  overflow: hidden;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Removed transform transition as requested (no hover effect) */
+}
+
+/* Removed .imageWrapper:hover .image scale transform */
+
+/* Static video overlay - always visible for videos */
+.videoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Static icon overlay (e.g. for carousel/album) */
+.iconOverlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.loadingContainer {
+  text-align: center;
+  padding: 50px;
+}
+
+.loadMoreBtn {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 0 30px;
+  height: 40px;
+  font-weight: 600;
+}
+
+.loadMoreBtn:hover {
+  background-color: #555 !important;
+  color: #fff !important;
+}
+
+.followBtn {
+  background-color: #0095f6;
+  /* Instagram Blue */
+  color: #fff;
+  border: none;
+  padding: 0 30px;
+  height: 40px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.followBtn:hover {
+  background-color: #1877f2 !important;
+  color: #fff !important;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 10px;
+  }
+}

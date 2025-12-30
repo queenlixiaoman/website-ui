@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  height: calc(100vh - 80px); /* 减去 Header 高度，全屏显示 */
+  width: 100%;
+  background-color: #f5f5f5;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 地图容器 */
+.mapWrapper {
+  flex: 1;
+  position: relative;
+  height: 100%;
+  /* 确保地图不会被侧边栏挤压 */
+  min-width: 0; 
+}
+
+/* 侧边栏切换按钮 */
+.toggleSidebarBtn {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 5;
+  background: white;
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.toggleSidebarBtn:hover {
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 移动端响应式 */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    min-height: calc(100vh - 60px); /* 移动端 Header 可能更矮 */
+  }
+
+  .mapWrapper {
+    height: 60vh; /* 移动端地图高度固定或自适应 */
+    order: 1; /* 地图在侧边栏上方或下方，视需求而定，这里默认下方 */
+  }
+  
+  .toggleSidebarBtn {
+    top: auto;
+    bottom: 24px;
+    left: 16px;
+  }
+}
+

@@ -1,0 +1,55 @@
+/* 地图区域 */
+.mapArea {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.infoWindow,
+.infoWindowMain {
+  padding: 0;
+  max-width: 240px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.infoWindowMain {
+  max-width: 280px;
+}
+
+.infoImageWrapper {
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+  border-radius: 4px 4px 0 0;
+  margin-bottom: 12px;
+  position: relative;
+  background-color: #f0f0f0;
+}
+
+.infoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.infoContent {
+  padding: 4px 8px 8px;
+}
+
+.infoTitle {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #1a1a1a;
+  line-height: 1.4;
+}
+
+.infoAddress {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 0;
+}

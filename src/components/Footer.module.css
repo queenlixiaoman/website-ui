@@ -1,0 +1,108 @@
+.footerContainer {
+  padding: 0;
+  background: #f5f7fa;
+  color: #1f4b99;
+}
+
+.topBar {
+  background-color: #3590b0;
+  padding: 12px 0;
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  font-style: italic;
+  font-family: serif;
+  text-transform: uppercase;
+}
+
+.mainContent {
+  padding: 40px 20px;
+  margin: 0 auto;
+  background-image: linear-gradient(rgba(245, 247, 250, 0.9), rgba(245, 247, 250, 0.9)), url('https://thehavenoncollege.com/wp-content/uploads/Svigals_CollegeCrown_03a_result.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.centerAlign {
+  text-align: center;
+}
+
+.logoContainer {
+  margin-bottom: 16px;
+}
+
+.havenLogo {
+  max-width: 240px;
+  height: auto;
+}
+
+/* Increase specificity to override Ant Design defaults without !important */
+.footerContainer .contactPhone {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1f4b99;
+}
+
+.footerContainer .contactEmail {
+  font-size: 16px;
+  font-weight: bold;
+  color: #1f4b99;
+  text-transform: uppercase;
+}
+
+.footerContainer .addressText {
+  font-size: 18px;
+  color: #003366;
+}
+
+.hoursContainer {
+  margin: 10px 0;
+}
+
+.footerContainer .hoursText {
+  display: block;
+  color: #003366;
+}
+
+.footerContainer .walkInText {
+  font-size: 20px;
+  color: #003366;
+  margin-top: 10px;
+}
+
+.managementLogo {
+  max-width: 120px;
+  height: auto;
+}
+
+.managementLabel {
+  color: #8c6d48;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
+
+.iconsRow {
+  font-size: 24px;
+  color: #000;
+}
+
+.linkDivider {
+  border-color: #1f4b99;
+}
+
+.footerContainer .footerLink {
+  color: #003366;
+  font-weight: bold;
+}
+
+.bottomBar {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 12px;
+  color: #003366;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}
