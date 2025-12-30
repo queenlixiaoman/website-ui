@@ -5,7 +5,7 @@
 export async function getInstagramUser() {
   try {
     // 改为相对路径，通过 next.config.mjs 的 rewrite 代理到 localhost:3001，解决跨域问题
-    const url = '/api/instagram/info'
+    const url = '/instagram/info'
     const res = await fetch(url)
     const data = await res.json()
     console.log('[Instagram] User data:', data)
@@ -28,14 +28,13 @@ export async function getInstagramUser() {
 export async function getInstagramPosts(after = null) {
   try {
     // 使用相对路径，通过 next.config.mjs 代理到后端服务
-    let url = '/api/instagram/image'
+    let url = '/instagram/image'
     if (after) {
       url += `?after=${after}`
     }
 
     const res = await fetch(url)
     const data = await res.json()
-    console.log('--------->', data)
 
     if (data.error) {
       throw new Error(data.error.message || 'Failed to fetch posts')
