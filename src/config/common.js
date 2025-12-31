@@ -1,5 +1,5 @@
 // logo
-const logo = 'https://thehavenoncollege.com/wp-content/uploads/havoclogo.png'
+const logo = '/assets/imgs/havoclogo.png'
 // 主题
 const colorPrimary = '#1f4b99'
 const themeColor = {

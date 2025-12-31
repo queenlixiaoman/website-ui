@@ -14,6 +14,7 @@ import { header } from '@/config/common'
 import style from './page.module.css'
 export default function HomeClient() {
   // 获取构建信息 上线时候去掉
+  /*
   useEffect(() => {
     fetch('/build-info.json')
       .then((res) => res.json())
@@ -27,6 +28,7 @@ export default function HomeClient() {
         console.error('Failed to fetch build info:', err)
       })
   }, [])
+  */
 
   // 使用 SEO 模块生成 ApartmentComplex Schema
   const apartmentSchema = generateApartmentComplexSchema({

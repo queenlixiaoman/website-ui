@@ -46,12 +46,16 @@ const SiteHeader = () => {
       <div className = { styles.headerContent }>
         <Flex align = "center" justify = "space-between">
           {/* Left: Logo Section */}
-          <Link href = "/" className = { styles.logoSection }>
+          <Link href = "/" className = { styles.logoSection } aria-label="Go to homepage">
             <Flex vertical align = "start">
+              {/* Add width/height to avoid CLS, and add priority for LCP optimization */}
               <img
                 src = { logo }
-                alt = "The Haven on College"
+                alt = "The Haven on College Logo"
                 className = { styles.logoImg }
+                width = "180"
+                height = "60"
+                fetchPriority="high"
               />
               <div className = { styles.formerNameContainer }>
                 <span className = { styles.formerLabel }>Formerly known as</span>

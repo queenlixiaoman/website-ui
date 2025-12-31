@@ -54,17 +54,18 @@ const HomeFloorPlans = () => {
 
       {/* Floor Plans Grid */}
       <Row gutter = { [ 32, 32 ] }>
-        {filteredPlans.map((plan) => (
+        {filteredPlans.map((plan, index) => (
           <Col xs = { 24 } sm = { 12 } lg = { 8 } xl = { 6 } key = { plan.id }>
             <div className = { styles.card }>
               <div className = { styles.cardImageWrapper }>
                 <Image
                   src = { plan.image }
-                  alt = { plan.name }
+                  alt = { `Floor plan for ${plan.name} - ${plan.type}` }
                   width = { 300 }
                   height = { 200 }
                   className = { styles.cardImage }
-                  unoptimized
+                  priority={index < 4} // Eager load the first 4 images (above the fold)
+                  loading={index < 4 ? undefined : "lazy"}
                 />
               </div>
               <div className = { styles.cardContent }>
@@ -74,7 +75,11 @@ const HomeFloorPlans = () => {
                   <span className = { styles.detailItem }>{plan.bath}</span>
                   <span>{plan.sqft} Sq. Ft.</span>
                 </div>
-                <Button type = "primary" className = { styles.actionButton }>
+                <Button 
+                  type = "primary" 
+                  className = { styles.actionButton }
+                  aria-label={`Check availability for ${plan.name} ${plan.type}`}
+                >
                   Check Availability
                 </Button>
               </div>

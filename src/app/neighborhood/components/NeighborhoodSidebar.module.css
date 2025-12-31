@@ -59,13 +59,16 @@
 .item {
   display: flex;
   align-items: center;
-  padding: 12px 16px 12px 24px;
+  /* Adjust padding to increase touch target size for mobile */
+  padding: 16px 16px 16px 24px;
   cursor: pointer;
   transition: all 0.2s ease;
   color: #333;
   font-size: 14px;
   background: transparent;
   position: relative;
+  /* Ensure minimum height for touch target */
+  min-height: 48px;
 }
 
 .item:hover {

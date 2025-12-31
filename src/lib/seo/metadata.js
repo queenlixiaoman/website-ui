@@ -74,6 +74,12 @@ export function generateGlobalMetadata() {
       ...(verificationConfig.google && { google: verificationConfig.google }),
       ...(verificationConfig.bing && { bing: verificationConfig.bing }),
     },
+    // 添加 Apple Web App 配置
+    appleWebApp: {
+      capable: true,
+      title: siteConfig.name,
+      statusBarStyle: 'default',
+    },
   }
 }
 
@@ -103,15 +109,19 @@ export function generatePageMetadata({
   url,
   image = siteConfig.logo,
   type = 'website',
+  absoluteTitle = false, // 是否使用绝对标题（不添加后缀）
 }) {
   const pageUrl = url || `/${title.toLowerCase().replace(/\s+/g, '-')}`
   const fullUrl = `${siteConfig.url}${pageUrl}`
 
   return {
-    title,
+    title: absoluteTitle ? { absolute: title } : title,
     description,
+    alternates: {
+      canonical: fullUrl,
+    },
     openGraph: {
-      title: `${title} ${siteConfig.titleSeparator} ${siteConfig.name}`,
+      title: absoluteTitle ? title : `${title} ${siteConfig.titleSeparator} ${siteConfig.name}`,
       description,
       url: fullUrl,
       siteName: siteConfig.name,
@@ -128,7 +138,7 @@ export function generatePageMetadata({
     },
     twitter: {
       card: socialConfig.twitter.card,
-      title: `${title} ${siteConfig.titleSeparator} ${siteConfig.name}`,
+      title: absoluteTitle ? title : `${title} ${siteConfig.titleSeparator} ${siteConfig.name}`,
       description,
       images: [ image ],
       ...(socialConfig.twitter.site && { site: socialConfig.twitter.site }),

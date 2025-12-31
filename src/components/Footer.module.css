@@ -19,7 +19,7 @@
 .mainContent {
   padding: 40px 20px;
   margin: 0 auto;
-  background-image: linear-gradient(rgba(245, 247, 250, 0.9), rgba(245, 247, 250, 0.9)), url('https://thehavenoncollege.com/wp-content/uploads/Svigals_CollegeCrown_03a_result.webp');
+  background-image: linear-gradient(rgba(245, 247, 250, 0.9), rgba(245, 247, 250, 0.9)), url('/assets/imgs/room1.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

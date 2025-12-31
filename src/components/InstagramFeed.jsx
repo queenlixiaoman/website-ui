@@ -33,11 +33,12 @@ const InstagramFeed = () => {
    */
   const fetchUserData = async () => {
     const result = await getInstagramUser()
-    console.log('result', result)
+    // console.log('result', result)
     if (result.success && result.data.username) {
       setUserInfo(result.data)
     } else {
-      message.error(result.error || 'Failed to load user information')
+      // Silently fail or log to error reporting service
+      console.warn('Failed to load Instagram user info')
     }
   }
 
@@ -105,8 +106,11 @@ const InstagramFeed = () => {
               icon = { <User theme = "outline" size = { 24 } fill = "#fff" /> }
               src = { userInfo?.profile_picture_url || null }
               className = { styles.avatar }
+              alt = { userInfo?.username ? `${userInfo.username} Instagram profile` : 'Instagram user profile' }
             >
-              {userInfo?.username}
+              {userInfo?.username && (
+                <span className="visually-hidden">{userInfo.username}</span>
+              )}
             </Avatar>
             <div className = { styles.avatarOverlay }>
               <Camera theme = "outline" size = "24" fill = "#fff" />
@@ -142,9 +146,11 @@ const InstagramFeed = () => {
                     {imageUrl ? (
                       <img
                         src = { imageUrl }
-                        alt = { post.caption || 'Instagram post' }
+                        alt = { post.caption ? `Instagram post: ${post.caption.slice(0, 50)}...` : 'The Haven on Instagram' }
                         className = { styles.image }
                         loading = "lazy"
+                        width = "300"
+                        height = "300"
                       />
                     ) : (
                       <div className = { styles.placeholder }>No Image</div>

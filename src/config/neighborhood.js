@@ -10,7 +10,7 @@ const mainLocation = {
   address: '200 College St, New Haven CT 06510',
   lat: 41.3043,
   lng: -72.9293,
-  image: 'https://thehavenoncollege.com/wp-content/uploads/havoclogo.png', // Example image
+  image: '/assets/imgs/havoclogo.png', // Example image
   description: 'A premier residential development in downtown New Haven.',
   iconUrl: '/assets/imgs/mainMarker.svg',
 }

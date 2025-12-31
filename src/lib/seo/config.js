@@ -12,8 +12,9 @@
  * 网站基础信息配置
  */
 export const siteConfig = {
-  // 网站 URL（可通过环境变量覆盖）
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://thehavenoncollege.com',
+  // 网站 URL
+  // 注意：此处硬编码为当前生产环境域名，以防止构建环境的环境变量 (NEXT_PUBLIC_SITE_URL) 指向旧域名
+  url: 'https://website-ui-6rz.pages.dev',
 
   // 网站名称
   name: 'The Haven | New Haven, Connecticut',
@@ -39,7 +40,7 @@ export const siteConfig = {
   ],
 
   // Logo URL
-  logo: 'https://thehavenoncollege.com/wp-content/uploads/havoclogo.png',
+  logo: 'https://website-ui-6rz.pages.dev/assets/imgs/havoclogo.png',
 
   // 语言设置
   locale: 'en_US',
@@ -61,7 +62,7 @@ export const contactConfig = {
   // 地址信息
   address: {
     streetAddress: '200 College St',
-    addressLocality: 'New haven',
+    addressLocality: 'New Haven',
     addressRegion: 'CT',
     postalCode: '06510',
     addressCountry: 'US',
@@ -120,4 +121,3 @@ export const socialConfig = {
     // 'https://www.instagram.com/yourhandle',
   ],
 }
-

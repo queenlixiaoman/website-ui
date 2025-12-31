@@ -21,9 +21,12 @@ const SiteFooter = () => {
             <Flex vertical gap = "middle" align = "center">
               <div className = { styles.logoContainer }>
                 <img
-                  src = "https://thehavenoncollege.com/wp-content/uploads/havoclogo.png"
-                  alt = "The Haven on College"
+                  src = "/assets/imgs/havoclogo.png"
+                  alt = "The Haven on College Logo"
                   className = { styles.havenLogo }
+                  width = "150"
+                  height = "50"
+                  loading = "lazy"
                 />
               </div>
 
@@ -64,9 +67,12 @@ const SiteFooter = () => {
             <Flex vertical gap = "middle" align = "center">
               <div className = { styles.logoContainer }>
                 <img
-                  src = "https://thehavenoncollege.com/wp-content/uploads/brizy/imgs/Redstone-Logo-164x151x2x0x161x151x1645129713-105x98x1x0x102x98x1717443364.png"
+                  src = "/assets/imgs/redstone-logo.png"
                   alt = "HH Red Stone"
                   className = { styles.managementLogo }
+                  width = "100"
+                  height = "100"
+                  loading = "lazy"
                 />
                 <div className = { styles.managementLabel }>HH RED STONE</div>
               </div>
@@ -87,10 +93,10 @@ const SiteFooter = () => {
                   <Divider orientation = "vertical" className = { styles.linkDivider } />
                 }
               >
-                <Link href = "#" className = { styles.footerLink }>
+                <Link href = "#" className = { styles.footerLink } aria-label="Terms and Conditions">
                   Terms and Conditions
                 </Link>
-                <Link href = "#" className = { styles.footerLink }>
+                <Link href = "#" className = { styles.footerLink } aria-label="Privacy Policy">
                   Privacy Policy
                 </Link>
               </Space>

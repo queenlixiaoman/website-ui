@@ -8,7 +8,7 @@ export async function getInstagramUser() {
     const url = '/api/instagram/info'
     const res = await fetch(url)
     const data = await res.json()
-    console.log('[Instagram] User data:', data)
+    // console.log('[Instagram] User data:', data)
 
     if (data.error) {
       throw new Error(data.error.message || 'Failed to fetch user data')

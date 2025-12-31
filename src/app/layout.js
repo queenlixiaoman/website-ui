@@ -8,15 +8,23 @@ import { generateGlobalMetadata, generateOrganizationSchema } from '@/lib/seo'
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: [ 'latin' ],
+  display: 'swap',
 })
 
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: [ 'latin' ],
+  display: 'swap',
 })
 
-// 使用 SEO 模块生成全局 Metadata
-export const metadata = generateGlobalMetadata()
+export const metadata = {
+  ...generateGlobalMetadata(),
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+  },
+}
 
 export default function RootLayout({ children }) {
   // 使用 SEO 模块生成 Organization Schema（知识图谱）
