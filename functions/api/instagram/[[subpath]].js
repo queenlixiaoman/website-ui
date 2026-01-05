@@ -8,7 +8,7 @@ export async function onRequest(context) {
   // 拼接相对路径
   const relativePath = pathSegments.join('/')
 
-  const backendBase = 'https://my-app.lixiaoman941210.workers.dev/api/instagram'
+  const backendBase = 'https://test-api.rnd-c13.workers.dev/v1/instagram'
 
   const backendUrl = new URL(backendBase)
   if (relativePath) {
